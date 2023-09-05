@@ -1,38 +1,43 @@
-import React from "react";
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
-function Home(){
-    return(
-    <section>
-        <Header/>
-        class Home extends Component {
-            constructor(props){
-                super(props)
-                this.state = {
-                    datos:''
-                }
-         }
-         componentDidMount(){
-         fetch('https://dh-movies.com/movies')
-             .then( response => response.json() )
-             .then( data => this.setState(
-         {datos: data.image_url}
-         ))
-             .catch( error => console.log(error) );
-         }
-           render(){
-        return(
-            <div>
-         { this.state.datos === '' ?
-         <h3>Cargando...</h3> :
-         <h3>{this.state.datos}></h3> }
-                <p> Hola Mundo </p>
-            </div>
-              ) 
-              }
-            }
-        <Footer/>
-    </section>
-    )
+import React, {Component} from 'react';
+import './Home.css';
+
+
+class Home extends Component{
+    constructor(){
+        super()
+        this.state = {}
+    }
+
+    componentDidMount(){
+        //PELÍCULAS
+        fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=bc6a66de00e3debea99fdcf92ffc0ab7&language=en-US`)
+            .then(response => response.json())
+            .then(data => this.setState(
+                {datos: data.image_url}
+            ))
+            .catch(error => console.log(error));
+
+        //SERIES
+        fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=bc6a66de00e3debea99fdcf92ffc0ab7&language=en-US`)
+            .then(response => response.json())
+            .then(data => this.setState(
+                {datos: data.image_url}
+            ))
+            .catch(error => console.log(error));
+    }
+    render(){
+        return(     
+            <section>
+                 <article className="buscador">
+                    <form action="resultados.html" method="GET"> 
+                        <input className="inputBusqueda" type="text" name="buscador" value="" placeholder="Escriba aqui..."/>
+                        <button className = "boton_busqueda" type="submit">Buscar</button>
+                    </form>
+                    <p className="errorForm"></p>
+                </article>
+            </section>
+        )
+    }
 }
-export default Home
+
+export default Home;
