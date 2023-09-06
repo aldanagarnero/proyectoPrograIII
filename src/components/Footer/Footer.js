@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css';
-
+//no se ven los iconos
 function Footer() {
     return (
         <footer>

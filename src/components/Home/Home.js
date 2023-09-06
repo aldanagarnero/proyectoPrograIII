@@ -5,37 +5,41 @@ import './Home.css';
 class Home extends Component{
     constructor(){
         super()
-        this.state = {}
+        this.state = {
+            datos: [],
+        }
     }
 
     componentDidMount(){
-        //PELÍCULAS
-        fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=bc6a66de00e3debea99fdcf92ffc0ab7&language=en-US`)
+        //POPULARES
+        fetch('https://api.themoviedb.org/3/movie/popular?api_key=0317bbf7efac7dd04b2c2c3748377d57&language=en-US&page=1')
             .then(response => response.json())
             .then(data => this.setState(
-                {datos: data.image_url}
+                {datos: data.results} 
             ))
             .catch(error => console.log(error));
 
-        //SERIES
-        fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=bc6a66de00e3debea99fdcf92ffc0ab7&language=en-US`)
-            .then(response => response.json())
-            .then(data => this.setState(
-                {datos: data.image_url}
-            ))
-            .catch(error => console.log(error));
+        //EN CARTEL
+        //fetch(`https://api.themoviedb.org/3/movie/now_playing`)
+          //  .then(response => response.json())
+            //.then(data => this.setState(
+           //     {datos: data}
+            //))
+           // .catch(error => console.log(error));
     }
     render(){
+        console.log(this.state)
         return(     
-            <body>
-                 <article className="buscador">
-                    <form action="resultados.html" method="GET"> 
-                        <input className="inputBusqueda" type="text" name="buscador" value="" placeholder="Escriba aqui..."/>
-                        <button className = "boton_busqueda" type="submit">Buscar</button>
-                    </form>
-                    <p className="errorForm"></p>
-                </article>
-            </body>
+             <body>
+                  <article className="buscador">
+                     <form action="resultados.html" method="GET"> 
+                         <input className="inputBusqueda" type="text" name="buscador" value="" placeholder="Escriba aqui..."/>
+                         <button className = "boton_busqueda" type="submit">Buscar</button>
+                     </form>
+                     <p className="errorForm"></p>
+                 </article>
+             </body>
+                //USAR MAP
         )
     }
 }

@@ -19,13 +19,13 @@ function App() {
         <Route path="/viewAll" component={ViewAll}/>
         <Route path="/favorites" component={Favorites}/>
         <Route path="/searchResults" component={SearchResults}/>
-        <Route path="/detallePelicula/id/:id" component={Navbar}/>
+        <Route path="/detallePelicula/id/:id" component={Navbar}/> 
         <Route path="/detalleSeries/id/:id" component={Navbar}/>
       </Switch>
     
       <Footer/>
     </section>
-  );
+  ); // falta crearlos route de detalle con sus componentes
 }
 
 export default App;
