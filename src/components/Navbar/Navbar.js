@@ -7,7 +7,7 @@ function Navbar() {
         <header> 
             <section className="encabezado">
                 <div className="nav-subcontainer">
-                    <img className = "logo" src="./Imagenes/MAGOBA (1).png"/>  
+                   <img className = "logo" src="../../assets/img/logoalbas2"/>  
                     <article className = "menu">
                         <Link to= "/" exact= 'true'>Inicio </Link> |
                         <Link to= "/favorites" >Favoritos </Link> |

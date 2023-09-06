@@ -27,7 +27,7 @@ class Home extends Component{
     }
     render(){
         return(     
-            <section>
+            <body>
                  <article className="buscador">
                     <form action="resultados.html" method="GET"> 
                         <input className="inputBusqueda" type="text" name="buscador" value="" placeholder="Escriba aqui..."/>
@@ -35,7 +35,7 @@ class Home extends Component{
                     </form>
                     <p className="errorForm"></p>
                 </article>
-            </section>
+            </body>
         )
     }
 }
