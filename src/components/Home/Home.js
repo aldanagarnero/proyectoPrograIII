@@ -42,7 +42,7 @@ class Home extends Component{
                  </div>
                  <div className="pelis_pop">
                     {
-                        this.state.populares.map(function(unaPeli){
+                        this.state.populares.slice(0.5).map(function(unaPeli){
                             return <TarjetaPeliculas key={ unaPeli.id } datosPeli={ unaPeli }/>
                         })
                     }
@@ -50,7 +50,7 @@ class Home extends Component{
                  </div>
                  <div className="body-home">
                  {
-                        this.state.cartelera.map(function(unaPeli){
+                        this.state.cartelera.slice(0.5).map(function(unaPeli){
                             return <TarjetaPeliculas key={ unaPeli.id } datosPeli={ unaPeli }/>
                         })
                     }
