@@ -7,13 +7,12 @@ import Favorites from './components/Favorites/Favorites';
 import ViewAll from './components/ViewAll/ViewAll';
 import SearchResults from './components/SearchResults/SearchResults';
 
-import {Route, Link, Switch} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 
 function App() {
   return (
     <section>
       <Navbar/>
-      
       <Switch>
         <Route path="/" exact={true} component={Home}/>
         <Route path="/viewAll" component={ViewAll}/>
