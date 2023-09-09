@@ -6,6 +6,9 @@ import Home from './screens/Home/Home';
 import Favorites from './screens/Favorites/Favorites';
 import ViewAll from './screens/ViewAll/ViewAll';
 import SearchResults from './screens/SearchResults/SearchResults';
+import SeriesDetails from './screens/Details/SeriesDetails';
+import MovieDetails from './screens/Details/MovieDetails';
+import NotFound from './screens/NotFound/NotFound';
 
 import {Route, Switch} from 'react-router-dom';
 
@@ -18,8 +21,9 @@ function App() {
         <Route path="/viewAll" component={ViewAll}/>
         <Route path="/favorites" component={Favorites}/>
         <Route path="/searchResults" component={SearchResults}/>
-        <Route path="/detallePelicula/id/:id" component={Navbar}/> 
-        <Route path="/detalleSeries/id/:id" component={Navbar}/>
+        <Route path="" component={NotFound}/>
+        <Route path="/MovieDetails/id/:id" component={MovieDetails}/> 
+        <Route path="/SeriesDetails/id/:id" component={SeriesDetails}/>
       </Switch>
     
       <Footer/>
