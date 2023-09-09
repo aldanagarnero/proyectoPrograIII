@@ -22,8 +22,8 @@ function App() {
         <Route path="/favorites" component={Favorites}/>
         <Route path="/searchResults" component={SearchResults}/>
         <Route path="" component={NotFound}/>
-        <Route path="/MovieDetails/id/:id" component={MovieDetails}/> 
-        <Route path="/SeriesDetails/id/:id" component={SeriesDetails}/>
+        <Route path="/moviedetails/id/:id" component={MovieDetails}/> 
+        <Route path="/Seriesdetails/id/:id" component={SeriesDetails}/>
       </Switch>
     
       <Footer/>

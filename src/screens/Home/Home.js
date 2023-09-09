@@ -31,7 +31,7 @@ class Home extends Component{
     render(){
         console.log(this.state)
         return(     
-             <section>
+             <section className='body_home'>
                 {/* BUSCADOR */}
                  <div className="buscador">
                      <form action="./SearchResults.js" method="GET"> 
@@ -40,19 +40,19 @@ class Home extends Component{
                      </form>
                      <p className="errorForm"></p>
                  </div>
-                 <h1>Peliculas Populares</h1>
+                 <h1 className='titulos'>Peliculas Populares</h1>
                  <div className="pelis_pop">
                     {
-                        this.state.populares.slice(0.5).map(function(unaPeli){
+                        this.state.populares.slice(0, 5).map(function(unaPeli){
                             return <TarjetaPeliculas key={ unaPeli.id } datosPeli={ unaPeli }/>
                         })
                     }
                     
                  </div>
-                 <h1>Peliculas Cartelera</h1>
+                 <h1 className='titulos'>Peliculas Cartelera</h1>
                  <div className="pelis_cartelera">
                  {
-                        this.state.cartelera.slice(0.5).map(function(unaPeli){
+                        this.state.cartelera.slice(0, 5).map(function(unaPeli){
                             return <TarjetaPeliculas key={ unaPeli.id } datosPeli={ unaPeli }/>
                         })
                     }

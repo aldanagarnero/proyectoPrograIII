@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 function Navbar() {
     return (
-        <header>
+        <header className='contenedor_header'>
             {/* LOGO */}
             <section className="encabezado">
                 <div className="nav-subcontainer">
