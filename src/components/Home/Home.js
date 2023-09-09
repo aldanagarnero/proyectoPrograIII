@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import TarjetaPeliculas from '../TarjetaPeliculas/TarjetaPeliculas';
 import './Home.css';
 
-
 class Home extends Component{
     constructor(){
         super()
