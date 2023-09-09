@@ -2,10 +2,10 @@ import React from 'react';
 
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
-import Home from './components/Home/Home';
-import Favorites from './components/Favorites/Favorites';
-import ViewAll from './components/ViewAll/ViewAll';
-import SearchResults from './components/SearchResults/SearchResults';
+import Home from './screens/Home/Home';
+import Favorites from './screens/Favorites/Favorites';
+import ViewAll from './screens/ViewAll/ViewAll';
+import SearchResults from './screens/SearchResults/SearchResults';
 
 import {Route, Switch} from 'react-router-dom';
 

@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import './TarjetaPeliculas.css'
+import './CardMovies.css'
 
-class TarjetaPeliculas extends Component{
+class CardMovies extends Component{
 
     constructor(Props){
         super(Props);
@@ -56,4 +56,4 @@ class TarjetaPeliculas extends Component{
     
 }
 
-export default TarjetaPeliculas;
+export default CardMovies;
