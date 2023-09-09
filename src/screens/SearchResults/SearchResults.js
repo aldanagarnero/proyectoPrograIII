@@ -4,23 +4,26 @@ import './SearchResults.css';
 class SearchResults extends Component {
     constructor(){
         super()
-        this.state = {
-            populares: [],
-            cartelera: []
-        }
+        this.state = {results: ''}
     }
 
-    componentDidMount(){
-        fetch('')
-            .then((response) => response.json())
-            .then((data) => this.setState(
-                {populares: data.results} 
-            ))
-            .catch((error) => console.log(error));
+    evitarSubmit(event){
+        event.preventDefault();
     }
+
+    controlarCambios(event){
+        this.setState({results: event.target.value})
+    }
+
     render(){
-        return
-    }
+        return(
+        <form onSubmit={(event) => this.evitarSubmit(event)}>
+            <label>Nombre: </label>
+            <input type="text" onChange={(event)=>this.controlarCambios(event)} value={this.state.valor} />
+            <input type="submit" value="Submit"/>
+            <button className = "boton_busqueda" value="send" type="submit">Buscar</button>
+        </form>
+    )}
 }
 
 

@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import './CardMovies.css'
 
 class CardMovies extends Component{
-
     constructor(Props){
         super(Props);
         this.state = {
@@ -41,7 +40,6 @@ class CardMovies extends Component{
         })
 
     }
-
 
     render(){
         return (

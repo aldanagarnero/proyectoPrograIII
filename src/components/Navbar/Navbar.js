@@ -1,18 +1,23 @@
 import React from 'react';
 import './Navbar.css';
-import {Route, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 function Navbar() {
     return (
-        <header> 
+        <header>
+            {/* LOGO */}
             <section className="encabezado">
                 <div className="nav-subcontainer">
-                   <img className = "logo" src="../../assets/img/logoalbas2"/>  
-                    <article className = "menu">
-                        <Link to= "/" exact= 'true'>Inicio </Link> |
-                        <Link to= "/favorites" >Favoritos </Link> |
-                        <Link to= "/viewAll" exact= 'true'>Ver todas </Link> |
-                    </article> 
+                   <Link to='/'><img className="logo" src="./img/logoalbas.png" alt="Logo Albas"/></Link>  
+                </div>
+
+            {/* BARRA DE NAVEGACIÓN */}
+                <div className = "menu">
+                    <nav>
+                        <Link to= "/" exact='true'>Inicio</Link> |
+                        <Link to= "/favorites">Favoritos</Link> |
+                        <Link to= "/viewAll">Ver todas</Link> |
+                    </nav>
                 </div>
             </section>
         </header>
