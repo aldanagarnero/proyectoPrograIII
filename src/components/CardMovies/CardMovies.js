@@ -48,8 +48,7 @@ class CardMovies extends Component{
             <article className='character-card'>
                 { <img src={"https://image.tmdb.org/t/p/w300/" + this.props.datosPeli.poster_path} alt={this.props.datosPeli.original_title} />}
                 <button onClick={()=>this.agergarYSacarDeFavs(this.props.datosPeli.id)} type='button'>{this.state.textoBoton}</button>
-                <h2>{this.props.datosPeli.title}</h2>
-                <p>{this.props.datosPeli.overview}</p>
+                <h2 className='titulo_peli'>{this.props.datosPeli.title}</h2>
             </article>
         )
     }

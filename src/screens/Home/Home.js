@@ -40,7 +40,7 @@ class Home extends Component{
                      </form>
                      <p className="errorForm"></p>
                  </div>
-
+                 <h1>Peliculas Populares</h1>
                  <div className="pelis_pop">
                     {
                         this.state.populares.slice(0.5).map(function(unaPeli){
@@ -49,7 +49,8 @@ class Home extends Component{
                     }
                     
                  </div>
-                 <div className="body-home">
+                 <h1>Peliculas Cartelera</h1>
+                 <div className="pelis_cartelera">
                  {
                         this.state.cartelera.slice(0.5).map(function(unaPeli){
                             return <TarjetaPeliculas key={ unaPeli.id } datosPeli={ unaPeli }/>
