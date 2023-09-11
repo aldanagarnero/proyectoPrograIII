@@ -1,5 +1,6 @@
-import React, {Component} from 'react'
-import './CardMovies.css'
+import React, {Component} from 'react';
+import './CardMovies.css';
+import {Link} from 'react-router-dom';
 
 class CardMovies extends Component{
     constructor(props){
@@ -50,7 +51,7 @@ class CardMovies extends Component{
     render(){
         return (
             <div>
-                <Link to={'./moviedetails/id/' + id}>
+                <Link to={'/moviedetails/id/' + this.props.datosMovie.id}>
                     <img src={`https://image.tmdb.org/t/p/w300/${this.props.datosMovie.poster_path}`} alt={this.props.datosMovie.original_title} />
                 </Link>
                 <button onClick={()=>this.functionFavs(this.props.datosMovie.id)} type='button'>{this.state.text}</button>

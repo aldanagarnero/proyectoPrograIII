@@ -5,4 +5,4 @@ function NotFound(){
         <p className="texto">Error 404 Not Found</p>
     )
 }
-export default NotFound
+export default NotFound;

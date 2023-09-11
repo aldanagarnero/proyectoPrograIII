@@ -6,7 +6,6 @@ import Home from './screens/Home/Home';
 import Favorites from './screens/Favorites/Favorites';
 import ViewAll from './screens/ViewAll/ViewAll';
 import SearchResults from './screens/SearchResults/SearchResults';
-import SeriesDetails from './screens/Details/SeriesDetails';
 import MovieDetails from './screens/Details/MovieDetails';
 import NotFound from './screens/NotFound/NotFound';
 
@@ -21,14 +20,12 @@ function App() {
         <Route path="/viewAll" component={ViewAll}/>
         <Route path="/favorites" component={Favorites}/>
         <Route path="/searchResults" component={SearchResults}/>
-        <Route path="" component={NotFound}/>
         <Route path="/moviedetails/id/:id" component={MovieDetails}/> 
-        <Route path="/Seriesdetails/id/:id" component={SeriesDetails}/>
+        <Route path="" component={NotFound}/>
       </Switch>
-    
       <Footer/>
     </section>
-  ); 
+  )
 }
 
 export default App;
