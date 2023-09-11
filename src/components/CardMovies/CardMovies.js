@@ -2,55 +2,60 @@ import React, {Component} from 'react'
 import './CardMovies.css'
 
 class CardMovies extends Component{
-    constructor(Props){
-        super(Props);
+    constructor(props){
+        super(props);
         this.state = {
-           textoBoton:'Agregar a favoritos',
+            text:'Agregar a favoritos'
         }
     }
 
     componentDidMount(){
-        //Chequear si el id está en el array de favoritos
-        let recuperoStorage = localStorage.getItem('favoritos');
-
+        let recuperoStorage = localStorage.getItem('favorites');
         if (recuperoStorage !== null){
-            let favoritos = JSON.parse(recuperoStorage);
-    
-            //si está el id, cambiar el texto del botón
-            if(favoritos.includes(this.props.datosPeli.id)){ 
+            let favorites = JSON.parse(recuperoStorage);
+            if(favorites.includes(this.props.datosMovie.id)){ 
                 this.setState({
-                    textoBoton: "Quitar de favoritos"
+                    text: 'Quitar de favoritos'
                 })
             }
-
         }
     }
 
-    agergarYSacarDeFavs(id){
-        //Guardar un id en un array y luego en localStorage
-        let favoritos = [];
-        favoritos.push(id);
+    functionFavs(id){
+        let favorites = [];
+        let recuperoStorage = localStorage.getItem('favorites');
+
+        if (recuperoStorage !== null){
+            favorites = JSON.parse(recuperoStorage);
+        }
+
+        if(favorites.includes(id)){
+            favorites = favorites.filter( unId => unId !== id)
+            this.setState({
+                textoBoton : 'Agregar a favoritos'
+            })
+
+        } else {
+            favorites.push(id);
+            this.setState({
+                textoBoton: 'Quitar de favoritos'
+            })
+        }
 
         //Guardar en localStorage
-        let favoritosToString = JSON.stringify(favoritos);        
-        localStorage.setItem('favoritos', favoritosToString);
-
-        this.setState({
-            textoBoton: "Quitar de favoritos",
-        })
-
+        let favoritesToString = JSON.stringify(favorites);        
+        localStorage.setItem('favorites', favoritesToString);
     }
 
     render(){
         return (
-            <article className='character-card'>
-                { <img src={"https://image.tmdb.org/t/p/w300/" + this.props.datosPeli.poster_path} alt={this.props.datosPeli.original_title} />}
-                <button onClick={()=>this.agergarYSacarDeFavs(this.props.datosPeli.id)} type='button'>{this.state.textoBoton}</button>
-                <h2 className='titulo_peli'>{this.props.datosPeli.title}</h2>
-            </article>
+            <div>
+                <img src={`https://image.tmdb.org/t/p/w300/${this.props.datosMovie.poster_path}`} alt={this.props.datosMovie.original_title} />
+                <button onClick={()=>this.functionFavs(this.props.datosMovie.id)} type='button'>{this.state.text}</button>
+                <h2>{this.props.datosMovie.title}</h2>
+            </div>
         )
     }
-    
 }
 
 export default CardMovies;
