@@ -7,7 +7,8 @@ class Home extends Component{
         super()
         this.state = {
             populares: [],
-            cartelera: []
+            cartelera: [],
+            results: ''
         }
     }
 
@@ -28,16 +29,30 @@ class Home extends Component{
             ))
            .catch((error) => console.log(error));
     }
+
+    evitarSubmit(event){
+        event.preventDefault();
+        return true
+    }
+
+    guardarData(event){
+        this.setState({
+            results: event.target.value
+        }, () => this.props.filtrar(this.state.results))
+        return true
+    }
+
     render(){
         console.log(this.state)
         return(     
              <section className='body_home'>
                 {/* BUSCADOR */}
                  <div className="buscador">
-                     <form action="./SearchResults.js" method="GET"> 
-                         <input className="inputBusqueda" type="text" name="buscador" value="" placeholder="Escriba aqui..."/>
-                         <button className = "boton_busqueda" value="send" type="submit">Buscar</button>
-                     </form>
+                        <form action="./SearchResults.js" method="GET" onSubmit={(event) => this.evitarSubmit(event)}>
+                            <label>Nombre: </label>
+                            <input type="text" name="filtro" onChange={(event)=>this.guardarData(event)} value={this.state.results} />
+                            <button className = "boton_busqueda" value="send" type="submit">Buscar</button>
+                        </form>
                      <p className="errorForm"></p>
                  </div>
                  <h1 className='titulos'>Peliculas Populares</h1>

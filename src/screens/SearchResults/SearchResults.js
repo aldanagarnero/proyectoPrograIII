@@ -4,27 +4,38 @@ import './SearchResults.css';
 class SearchResults extends Component {
     constructor(){
         super()
-        this.state = {results: ''}
+        this.state = {
+            results: ''
+        }
     }
 
-    evitarSubmit(event){
-        event.preventDefault();
+    componentDidMount(){
+        fetch('https://api.themoviedb.org/3/movie/upcoming?api_key=0317bbf7efac7dd04b2c2c3748377d57&language=en-US&page=1')
+        .then(response => response.json())
+        .then( data => this.setState({
+            results: data.results,
+        }))
+        .catch(error => console.log(error))
     }
 
-    controlarCambios(event){
-        this.setState({results: event.target.value})
-    }
+    filtrado(element){
+            let filtrado = this.state.results.filter(function(pelicula){
+                return pelicula.name.includes(element)
+            })
+            this.setState({
+                results: filtrado,
+            })
+    
+        }
 
-    render(){
-        return(
-        <form onSubmit={(event) => this.evitarSubmit(event)}>
-            <label>Nombre: </label>
-            <input type="text" onChange={(event)=>this.controlarCambios(event)} value={this.state.valor} />
-            <input type="submit" value="Submit"/>
-            <button className = "boton_busqueda" value="send" type="submit">Buscar</button>
-        </form>
-    )}
+        render(){
+            return(
+                <section>
+            
+                </section>
+            )
+        }
 }
 
-
 export default SearchResults;
+
