@@ -50,7 +50,9 @@ class CardMovies extends Component{
     render(){
         return (
             <div>
-                <img src={`https://image.tmdb.org/t/p/w300/${this.props.datosMovie.poster_path}`} alt={this.props.datosMovie.original_title} />
+                <Link to={'./moviedetails/id/' + id}>
+                    <img src={`https://image.tmdb.org/t/p/w300/${this.props.datosMovie.poster_path}`} alt={this.props.datosMovie.original_title} />
+                </Link>
                 <button onClick={()=>this.functionFavs(this.props.datosMovie.id)} type='button'>{this.state.text}</button>
                 <h2>{this.props.datosMovie.title}</h2>
             </div>

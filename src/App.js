@@ -28,7 +28,7 @@ function App() {
     
       <Footer/>
     </section>
-  ); // falta crearlos route de detalle con sus componentes
+  ); 
 }
 
 export default App;
