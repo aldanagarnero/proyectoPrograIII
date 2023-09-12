@@ -1,6 +1,7 @@
 import React from 'react';
 import './Navbar.css';
 import {Link} from 'react-router-dom';
+import Buscador from '../Buscador/Buscador';
 
 function Navbar() {
     return (
@@ -18,6 +19,9 @@ function Navbar() {
                         <Link to= "/favorites">Favoritos</Link> |
                         <Link to= "/viewAll">Ver todas</Link> |
                     </nav>
+                </div>
+                <div className='search'>
+                    <Buscador/>
                 </div>
             </section>
         </header>

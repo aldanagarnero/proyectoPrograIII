@@ -1,9 +1,8 @@
 import React from 'react';
 
-const Notfound = () => {
+function NotFound(){
     return(
-        <h1 className="texto">Error 404 Not Found</h1>
+        <p className="texto">Error 404 Not Found</p>
     )
 }
-
-export default Notfound;
+export default NotFound

@@ -16,7 +16,7 @@ class CardMovies extends Component{
 
         if (recuperoStorage !== null){favorites = JSON.parse(recuperoStorage);
 
-            if(favorites.includes(this.props.datosMovie.id)){ 
+            if(favorites.includes(this.props.movieData.id)){ 
                 this.setState({
                     text: 'Quitar de favoritos'
                 })
@@ -52,16 +52,16 @@ class CardMovies extends Component{
 
     render(){
         return (
-            <div>
-                <Link to={`/detallePelicula/id/${this.props.datosMovie.id}`}>
-                    <img src={`https://image.tmdb.org/t/p/w300/${this.props.datosMovie.poster_path}`} alt={this.props.datosMovie.original_title}/>
+            <div className='characterCard'>
+                <Link to={`/moviedetails/id/${this.props.movieData.id}`}>
+                    <img src={`https://image.tmdb.org/t/p/w300/${this.props.movieData.poster_path}`} alt={this.props.movieData.original_title}/>
                 </Link>
 
-                <Link to={`/detallePelicula/id/${this.props.datosMovie.id}`}>
-                    <h2>{this.props.datosMovie.title}</h2>
+                <Link to={`/moviedetails/id/${this.props.movieData.id}`}>
+                    <h2>{this.props.movieData.title}</h2>
                 </Link>
 
-                <button onClick={()=>this.functionFavs(this.props.datosMovie.id)} type='button'>{this.state.text}</button>
+                <button onClick={()=>this.functionFavs(this.props.movieData.id)} type='button'>{this.state.text}</button>
 
             </div>
         )

@@ -1,38 +1,38 @@
 import React, {Component} from 'react';
+import TarjetaPelicula from "../../components/CardMovies/CardMovies"
 import './SearchResults.css';
 
 class SearchResults extends Component {
     constructor(){
         super()
         this.state = {
-            results: ''
+            movies: []
         }
     }
 
     componentDidMount(){
-        fetch('https://api.themoviedb.org/3/movie/upcoming?api_key=0317bbf7efac7dd04b2c2c3748377d57&language=en-US&page=1')
+        fetch(`https://api.themoviedb.org/3/search/movie?query=${this.props.match.params.query}&include_adult=false&api_key=45a63508e52C71549188d480ab5f1a32&language=en-US&page=1`) //falta url
         .then(response => response.json())
         .then( data => this.setState({
-            results: data.results,
+            movies: data.results,
         }))
         .catch(error => console.log(error))
     }
 
-    filtrado(element){
-            let filtrado = this.state.results.filter(function(pelicula){
-                return pelicula.name.includes(element)
-            })
-            this.setState({
-                results: filtrado,
-            })
-    
-        }
-
         render(){
+            console.log(this.props.match.params.query)
             return(
-                <section>
-            
-                </section>
+                <div className='body-home'>
+                    {this.state.movies.length > 0 ?(
+                        this.state.movies.slice(0, 5).map((movies)=> {
+                            return(
+                                <TarjetaPelicula key={movies.id} movieData={ movies }/>
+                            )
+                        })
+                    ):(
+                        <p>Cargando</p>
+                    )}
+                </div>
             )
         }
 }
