@@ -52,7 +52,7 @@ class CardMovies extends Component{
 
     render(){
         return (
-            <div className='characterCard'>
+            <div>
                 <Link to={`/moviedetails/id/${this.props.movieData.id}`}>
                     <img src={`https://image.tmdb.org/t/p/w300/${this.props.movieData.poster_path}`} alt={this.props.movieData.original_title}/>
                 </Link>
