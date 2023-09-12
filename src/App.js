@@ -22,8 +22,8 @@ function App() {
         <Route path="/popular" component={ViewAllPopular}/>
         <Route path="/upcoming" component={ViewAllUpcoming}/>
         <Route path="/favorites" component={Favorites}/>
-        <Route path="/moviedetails/id/:id" component={MovieDetails}/>
         <Route path="/searchResults" component={SearchResults}/>
+        <Route path="/moviedetails/id/:id" component={MovieDetails}/>
         <Route path="" component={NotFound}/>
       </Switch>
       <Footer/>

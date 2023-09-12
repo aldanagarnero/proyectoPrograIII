@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import CardMovies from '../../components/CardMovies/CardMovies';
 import './Home.css';
+import {Link} from 'react-router-dom';
 
 class Home extends Component{
     constructor(){
@@ -35,17 +36,17 @@ class Home extends Component{
             <main>
                 <section className='body_home'>
                     
-                    <h1 className='titulos'>Peliculas Populares</h1>
+                    <Link to={'/popular'}><h1 className='titulos'>Peliculas Populares</h1></Link>
                     <div className="pelis_pop">
                         {this.state.popular.slice(0, 5).map(function(movie){
-                            return <CardMovies key={movie.id} datosMovie={movie}/>
+                            return <CardMovies key={movie.id} movieData={movie}/>
                         })}
                         
                     </div>
-                    <h1 className='titulos'>Peliculas En Cartelera</h1>
+                    <Link to={'/upcoming'}><h1 className='titulos'>Peliculas En Cartelera</h1></Link>
                     <div className="pelis_cartelera">
                         {this.state.upcoming.slice(0, 5).map(function(movie){
-                                return <CardMovies key={movie.id} datosMovie={movie}/>
+                                return <CardMovies key={movie.id} movieData={movie}/>
                         })}
                     </div>
                 </section>

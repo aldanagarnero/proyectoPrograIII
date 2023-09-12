@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './ViewAll.css';
 import CardMovies from '../../components/CardMovies/CardMovies';
 
-class ViewAll extends Component{
+class ViewAllUpcoming extends Component{
     constructor(props){
         super(props)
         this.state = {
@@ -27,7 +27,7 @@ class ViewAll extends Component{
                     <h1 className='titulos'>Todas las películas en cartelera</h1>
                     <div className="pelis_pop">
                         {this.state.upcoming.map(function(movie){
-                            return <CardMovies key={movie.id} datosMovie={movie}/>
+                            return <CardMovies movieData={movie}/>
                         })}
                     </div>
                 </section>
@@ -36,4 +36,4 @@ class ViewAll extends Component{
     }
 }
 
-export default ViewAll;
+export default ViewAllUpcoming;

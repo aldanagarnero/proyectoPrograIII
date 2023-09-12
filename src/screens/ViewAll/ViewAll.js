@@ -10,7 +10,7 @@ class ViewAll extends Component{
             upcoming : []
         }
     }
-
+// CAMBIAR API A LA DE MOVIE GENERAL
     componentDidMount(){
         //POPULARES
         fetch('https://api.themoviedb.org/3/movie/popular?api_key=0317bbf7efac7dd04b2c2c3748377d57&language=en-US&page=1')
@@ -38,14 +38,14 @@ class ViewAll extends Component{
                     <h1 className='titulos'>Peliculas Populares</h1>
                     <div className="pelis_pop">
                         {this.state.popular.map(function(movie){
-                            return <CardMovies key={movie.id} datosMovie={movie}/>
+                            return <CardMovies movieData={movie}/>
                         })}
                         
                     </div>
                     <h1 className='titulos'>Peliculas En Cartelera</h1>
                     <div className="pelis_cartelera">
                         {this.state.upcoming.map(function(movie){
-                                return <CardMovies key={movie.id} datosMovie={movie}/>
+                                return <CardMovies movieData={movie}/>
                         })}
                     </div>
                 </section>
