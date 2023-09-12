@@ -38,7 +38,7 @@ class Home extends Component{
                     <h1 className='titulos'>Peliculas Populares</h1>
                     <div className="pelis_pop">
                         {this.state.popular.slice(0, 5).map(function(movie){
-                            return <CardMovies key={ movie.id } datosMovie={ movie }/>
+                            return <CardMovies key={movie.id} datosMovie={movie}/>
                         })}
                         
                     </div>
