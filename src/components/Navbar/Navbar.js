@@ -9,7 +9,7 @@ function Navbar() {
             {/* LOGO */}
             <section className="encabezado">
                 <div className="nav-subcontainer">
-                   <Link to='/'><img className="logo" src="./img/logoalbas.png" alt="Logo Albas"/></Link>  
+                   <Link to='/'><img className="logo" src="./img/nuevologo.png" alt="Logo Albas"/></Link>  
                 </div>
 
             {/* BARRA DE NAVEGACIÓN */}

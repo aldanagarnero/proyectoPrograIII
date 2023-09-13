@@ -14,7 +14,7 @@ import NotFound from './screens/NotFound/NotFound';
 
 function App() {
   return (
-    <section>
+    <body>
       <Navbar/>
       <Switch>
         <Route path="/" exact={true} component={Home}/>
@@ -27,7 +27,7 @@ function App() {
         <Route path="" component={NotFound}/>
       </Switch>
       <Footer/>
-    </section>
+    </body >
   )
 }
 
