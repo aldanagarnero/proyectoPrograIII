@@ -35,7 +35,7 @@ class Home extends Component{
         return(     
             <main>
                 <section className='body_home'>
-                    
+
                     <Link to={'/popular'}><h1 className='titulos'>Peliculas Populares</h1></Link>
                     <div className="pelis_pop">
                         {this.state.popular.slice(0, 5).map(function(movie){

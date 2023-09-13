@@ -39,7 +39,12 @@ class Favorites extends Component {
       <React.Fragment>
         <main>
           <h2>PELICULAS FAVORITAS</h2>
-          {this.state.favorites.length > 0 ? <CardMovies favorites={this.state.favorites} /> : <h3>No seleccionaste películas favoritas</h3>}
+          {
+            this.state.favorites.length > 0 ? 
+            this.state.favorites.map((favoritesMovies) =>
+            <CardMovies movieData={favoritesMovies}/>)
+            : <h3>No seleccionaste películas favoritas</h3>
+          }
         </main>
       </React.Fragment>
     )
