@@ -15,9 +15,10 @@ function Navbar() {
             {/* BARRA DE NAVEGACIÓN */}
                 <div className = "menu">
                     <nav>
-                        <Link to= "/" exact='true'>Inicio</Link> |
-                        <Link to= "/favorites">Favoritos</Link> |
-                        <Link to= "/viewAll">Ver todas</Link> |
+                        <Link to= "/" exact='true'>Inicio</Link> | 
+                        <Link to= "/favorites">Favoritos</Link> | 
+                        <Link to= "/popular">Populares</Link> | 
+                        <Link to= "/upcoming">En cartelera</Link>
                     </nav>
                 </div>
                 <div className='search'>

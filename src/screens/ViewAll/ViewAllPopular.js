@@ -27,9 +27,10 @@ class ViewAllPopular extends Component{
                 <section className='body_home'>
                     <h1 className='titulos'>Todas las películas populares</h1>
                     <div className="pelis_pop">
-                        {this.state.popular.map(function(movie){
+                        {this.state.upcoming.length === 0 ? (<img src='/img/gif-carga.gif' alt="Cargando..." />) : (
+                        this.state.popular.map(function(movie){
                             return <CardMovies movieData={movie}/>
-                        })}   
+                        }))}   
                     </div>
                 </section>
             </main>

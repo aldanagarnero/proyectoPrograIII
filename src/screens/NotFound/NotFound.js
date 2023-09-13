@@ -2,7 +2,7 @@ import React from 'react';
 
 function NotFound(){
     return(
-        <p className="texto">Error 404 Not Found</p>
+        <h1 className="texto">Error 404 Not Found</h1>
     )
 }
 export default NotFound

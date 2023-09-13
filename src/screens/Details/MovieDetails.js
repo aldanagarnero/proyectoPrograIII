@@ -5,12 +5,14 @@ class MovieDetails extends Component{
     constructor(props){
         super(props)
         this.state = {
-            movies: []
+            movies: [],
+            text: 'Agregar a favoritos'
         };
     }
 
     componentDidMount(){
         let id = this.props.match.params.id;
+
         fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=0317bbf7efac7dd04b2c2c3748377d57&language=en-US&page=1`)
             .then((response) => response.json())
             .then((data) => 
@@ -19,6 +21,32 @@ class MovieDetails extends Component{
             ))
             .catch((error) => console.log(error));
     }
+    functionFavs(id){
+        let favorites = []
+        let recuperoStorage = localStorage.getItem('favorites');
+
+        if (recuperoStorage !== null){
+            favorites = JSON.parse(recuperoStorage);
+        }
+
+        if(favorites.includes(id)){
+            favorites = favorites.filter( unId => unId !== id);
+            this.setState({
+                text : 'Agregar a favoritos'
+            })
+
+        } else {
+            favorites.push(id);
+            this.setState({
+                text: 'Quitar de favoritos'
+            })
+        }
+
+        //Guardar en localStorage
+        let favoritesToString = JSON.stringify(favorites);        
+        localStorage.setItem('favorites', favoritesToString);
+    }
+
 
     render(){
        
@@ -35,7 +63,8 @@ class MovieDetails extends Component{
                         <p>Fecha de estreno: {this.state.movies.release_date}</p>
                         <p>Duracion: {this.state.movies.vote_average}</p>
                         <p>Sinopsis: {this.state.movies.overview}</p>
-                        <p>Genero: {this.state.movies.genres.map((genre)=>genre.name)}</p>
+                        <p>Genero: {this.state.movies.genres.map((genre)=>`${genre.name} | `)}</p>
+                        <button onClick={()=>this.functionFavs(this.state.movies.id)} type='button'>{this.state.text}</button>
                     </section>
                 </React.Fragment>
                 )}

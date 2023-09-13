@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import TarjetaPelicula from "../../components/CardMovies/CardMovies"
+import CardMovies from "../../components/CardMovies/CardMovies"
 import './SearchResults.css';
 
 class SearchResults extends Component {
@@ -25,12 +25,10 @@ class SearchResults extends Component {
                     {this.state.movies.length > 0 ?(
                         this.state.movies.slice(0, 5).map((movies)=> {
                             return(
-                                <TarjetaPelicula key={movies.id} movieData={ movies }/>
+                                <CardMovies key={movies.id} movieData={ movies }/>
                             )
                         })
-                    ):(
-                        <p>Cargando</p>
-                    )}
+                    ):(<img src='/img/gif-carga.gif' alt="Cargando..." />)}
                 </div>
             )
         }
