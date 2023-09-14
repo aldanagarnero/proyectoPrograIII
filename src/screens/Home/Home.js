@@ -33,20 +33,21 @@ class Home extends Component {
     render() {
         return (
             <main>
-                <section className='body_home'>
-                    <Link to={'/popular'}><h1 className='titulos'>Peliculas Populares</h1></Link>
-                    <div className="pelis_pop">
+                <section>
+                    <Link to={'/popular'}><h1 className='titulos'>Peliculas populares</h1></Link>
+                    <div className="seccion_pop">
                         {this.state.popular.slice(0, 5).map((movie) =>
                             <CardMovies movieData={movie} />
                         )}
                     </div>
                     
-                    <Link to={'/upcoming'}><h1 className='titulos'>Peliculas Próximas</h1></Link>
-                    <div className="pelis_cartelera">
+                    <Link to={'/upcoming'}><h1 className='titulos'>Peliculas próximas</h1></Link>
+                    <div className="seccion_up">
                         {this.state.upcoming.slice(0, 5).map((movie) =>
                             <CardMovies movieData={movie} />
                         )}
                     </div>
+                    
                 </section>
             </main>
         )

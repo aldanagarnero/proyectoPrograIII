@@ -6,7 +6,8 @@ class CardMovies extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            text: 'Agregar a favoritos',
+            clase: "fa-solid fa-heart",
+            showInfo: 'Mostrar más',
         }
     }
 
@@ -19,7 +20,7 @@ class CardMovies extends Component {
 
             if (favorites.includes(this.props.movieData.id)) {
                 this.setState({
-                    text: 'Quitar de favoritos'
+                    clase: "fa-solid fa-heart enFav"
                 })
             }
         }
@@ -36,13 +37,13 @@ class CardMovies extends Component {
         if (favorites.includes(id)) {
             favorites = favorites.filter(unId => unId !== id);
             this.setState({
-                text: 'Agregar a favoritos'
+                clase: "fa-solid fa-heart",
             })
 
         } else {
             favorites.push(id);
             this.setState({
-                text: 'Quitar de favoritos'
+                clase: "fa-solid fa-heart enFav"
             })
         }
 
@@ -51,19 +52,35 @@ class CardMovies extends Component {
         localStorage.setItem('favorites', favoritesToString);
     }
 
+    functionShowInfo(){
+        if(this.state.showInfo === 'Mostrar más'){
+            this.setState({
+                showInfo: 'Mostrar menos'
+            })
+        } else{
+            this.setState({
+                showInfo: 'Mostrar más'
+            })
+        }
+    }
+
     render() {
         return (
-            <div className='characterCard'>
+            <section className='characterCard'>
                 <Link to={`/moviedetails/id/${this.props.movieData.id}`}>
-                    <img src={`https://image.tmdb.org/t/p/w300/${this.props.movieData.poster_path}`} alt={this.props.movieData.original_title} />
+                    <img className='poster' src={`https://image.tmdb.org/t/p/w300/${this.props.movieData.poster_path}`} alt={this.props.movieData.original_title} />
                 </Link>
 
                 <Link to={`/moviedetails/id/${this.props.movieData.id}`}>
-                    <h2>{this.props.movieData.title}</h2>
+                    <h2 className='titulo_peli'>{this.props.movieData.title}</h2>
                 </Link>
 
-                <button onClick={() => this.functionFavs(this.props.movieData.id)} type='button'>{this.state.text}</button>
+            <div className='botones'>
+                <button onClick={() => this.functionShowInfo()} type='button'> {this.state.showInfo}</button>
+                <a className='button' onClick={()=> this.functionFavs(this.props.movieData.id)} type='button'> <i className={this.state.clase}/></a>
+                {this.state.showInfo === 'Mostrar más' ?  false : <p>{this.props.movieData.overview}</p>}
             </div>
+            </section>
         )
     }
 }

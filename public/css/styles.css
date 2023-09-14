@@ -1,6 +1,43 @@
-body{
-    background-color: black;
+/* PARA TODAS LAS PÁGINAS */ 
+*{
+    box-sizing: border-box;
 }
-p{
+
+body{
+    background-color: #2b074b;
     color: white;
+    width: 100%;
+    margin: 0px;
+    background-image: url(../img/backgorund2.png);
+    background-repeat: repeat;
+    background-size: contain;
+    padding: 0%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration-line: none;
+    color: white;
+}
+
+a{
+    text-decoration-line: none;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+}
+
+h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+    font-size: 30px;
+    font-weight: lighter;
+}
+
+h2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+    font-size: 25 px;
+    font-weight: lighter;
 }

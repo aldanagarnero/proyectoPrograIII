@@ -1,5 +1,4 @@
-.pelis_pop{
-    background-color:black;
+.seccion_pop{
     width: 100%; 
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -9,8 +8,8 @@
     justify-content: space-around;
     align-items: center;
 }
-.pelis_cartelera{
-    background-color:black;
+
+.seccion_up{
     width: 100%; 
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -19,10 +18,10 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    margin-top: 20px;
 }
-.body_home{
-    background-color: black;
-}
+
 .titulos{
+    margin: 45px 0px 10px 10px;
     color: white;
 }

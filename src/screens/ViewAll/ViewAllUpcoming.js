@@ -25,7 +25,7 @@ class ViewAllUpcoming extends Component {
             <main>
                 <section className='body_home'>
                     <h1 className='titulos'>Todas las películas próximas</h1>
-                    <div className="pelis_pop">
+                    <div className="seccion_up">
                         {this.state.upcoming.length === 0 ? (<img src='/img/gif-carga.gif' alt="Cargando..." />) : (
                             this.state.upcoming.map(function (movie) {
                                 return <CardMovies movieData={movie} />

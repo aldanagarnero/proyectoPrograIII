@@ -27,7 +27,6 @@ class Favorites extends Component {
             this.setState({
               favorites: array
             })
-            console.log(favoritesMovies)
           })
           .catch((error) => console.log(error));
       })
@@ -39,7 +38,7 @@ class Favorites extends Component {
       <main>
         <section>
           <h1 className='titulos'>Favoritos</h1>
-          <div>
+          <div className='seccion'>
             {this.state.favorites.length > 0 ?
                 this.state.favorites.map((favoritesMovies) => 
                   <CardMovies movieData={favoritesMovies} />)

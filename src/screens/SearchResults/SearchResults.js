@@ -23,11 +23,13 @@ class SearchResults extends Component {
         return (
             <main>
                 <h1 className='titulos'>Resultados para {this.props.match.params.query} </h1>
-                {this.state.movies.length > 0 ? 
-                    this.state.movies.map((movies) =>
-                        <CardMovies movieData={movies} />)
-                : <h3>La búsqueda de {this.props.match.params.query} no arrojó coincidencias</h3>
-                }
+                <div className='seccion'>
+                    {this.state.movies.length > 0 ? 
+                        this.state.movies.map((movies) =>
+                            <CardMovies movieData={movies} />)
+                    : <h3>La búsqueda de {this.props.match.params.query} no arrojó coincidencias</h3>
+                    }
+                </div>
             </main>
         )
     }

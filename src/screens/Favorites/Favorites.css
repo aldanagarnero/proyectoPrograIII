@@ -1,0 +1,16 @@
+.seccion{
+    width: 100%; 
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;   
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.titulos{
+    margin: 45px 0px 10px 10px;
+    color: white;
+}

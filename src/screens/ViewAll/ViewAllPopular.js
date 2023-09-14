@@ -22,9 +22,9 @@ class ViewAllPopular extends Component {
     render() {
         return (
             <main>
-                <section className='body_home'>
+                <section>
                     <h1 className='titulos'>Todas las películas populares</h1>
-                    <div className="pelis_pop">
+                    <div className="seccion_pop">
                         {this.state.popular.length > 0 ? 
                             this.state.popular.map((movie) =>  
                                <CardMovies movieData={movie} />)

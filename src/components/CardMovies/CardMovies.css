@@ -1,3 +1,33 @@
 .characterCard{
     width: 20%;
 }
+
+.titulo_peli{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 20px;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.poster{
+    width: 260px;
+    height: 380;
+}
+
+.button{
+    padding-left: 7px;
+    color: white;
+    size: 10px;
+}
+.enFav{
+    color: red;
+}
+.button :hover{
+    color: pink;
+}
+
+.botones{
+    margin-bottom: 30px;
+}

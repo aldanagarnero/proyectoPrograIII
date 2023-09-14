@@ -1,0 +1,10 @@
+.titulodetails{
+    font-size: 30px;
+    padding: 10px;
+    background-color:rgba(16, 15, 15, 0.491);
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    margin-top: 35px;
+    color: white;
+}
