@@ -1,7 +1,7 @@
 import React from 'react';
 import './Navbar.css';
 import {Link} from 'react-router-dom';
-import Buscador from '../Buscador/Buscador';
+import SearchBar from '../SearchBar/SearchBar';
 
 function Navbar() {
     return (
@@ -15,14 +15,14 @@ function Navbar() {
             {/* BARRA DE NAVEGACIÓN */}
                 <div className = "menu">
                     <nav>
-                        <Link to= "/" exact='true'>Inicio</Link> | 
-                        <Link to= "/favorites">Favoritos</Link> | 
-                        <Link to= "/popular">Populares</Link> | 
-                        <Link to= "/upcoming">En cartelera</Link>
+                        <Link to= "/" exact='true'>INICIO </Link> | 
+                        <Link to= "/favorites"> FAVORITOS </Link> | 
+                        <Link to= "/popular"> POPULARES </Link> | 
+                        <Link to= "/upcoming"> PRÓXIMAS</Link>
                     </nav>
                 </div>
                 <div className='search'>
-                    <Buscador/>
+                    <SearchBar />
                 </div>
             </section>
         </header>

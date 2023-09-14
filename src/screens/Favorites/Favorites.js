@@ -12,7 +12,7 @@ class Favorites extends Component {
 
   componentDidMount() {
     //Recupero el storage
-    let favoritesMovies = []
+    let favoritesMovies = [];
     let recuperoStorage = localStorage.getItem('favorites');
 
     if (recuperoStorage !== null) {
@@ -27,26 +27,27 @@ class Favorites extends Component {
             this.setState({
               favorites: array
             })
+            console.log(favoritesMovies)
           })
           .catch((error) => console.log(error));
-
       })
-    };
+    }
   }
 
   render() {
     return (
-      <React.Fragment>
-        <main>
-          <h2>PELICULAS FAVORITAS</h2>
-          {
-            this.state.favorites.length > 0 ? 
-            this.state.favorites.map((favoritesMovies) =>
-            <CardMovies movieData={favoritesMovies}/>)
-            : <h3>No seleccionaste películas favoritas</h3>
-          }
-        </main>
-      </React.Fragment>
+      <main>
+        <section>
+          <h1 className='titulos'>Favoritos</h1>
+          <div>
+            {this.state.favorites.length > 0 ?
+                this.state.favorites.map((favoritesMovies) => 
+                  <CardMovies movieData={favoritesMovies} />)
+                : <h3>No seleccionaste películas favoritas</h3>
+            }
+          </div>
+        </section>
+      </main>
     )
   }
 }

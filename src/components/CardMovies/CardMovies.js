@@ -46,7 +46,7 @@ class CardMovies extends Component {
             })
         }
 
-        //Guardar en localStorage
+        //Guardarlo en localStorage
         let favoritesToString = JSON.stringify(favorites);
         localStorage.setItem('favorites', favoritesToString);
     }
@@ -63,7 +63,6 @@ class CardMovies extends Component {
                 </Link>
 
                 <button onClick={() => this.functionFavs(this.props.movieData.id)} type='button'>{this.state.text}</button>
-
             </div>
         )
     }
