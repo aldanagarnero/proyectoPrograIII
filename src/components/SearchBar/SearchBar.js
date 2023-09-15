@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './SearchBar.css';
 import { Link } from "react-router-dom";
 
 class SearchBar extends Component {
@@ -20,9 +21,11 @@ class SearchBar extends Component {
 
     render() {
         return (
-            <form onSubmit={(event) => this.evitarSubmit(event)}>
-                <input type="text" placeholder="Buscar" onChange={(event) => this.changes(event)} value={this.state.valor} />
-                <Link to={`/SearchResults/${this.state.valor}`}><button type="submit" value="Submit">Buscar</button></Link>
+            <form className="form" onSubmit={(event) => this.evitarSubmit(event)}>
+                <div className="search">
+                    <input className="input" type="text" placeholder="Buscar" onChange={(event) => this.changes(event)} value={this.state.valor} />
+                    <Link to={`/SearchResults/${this.state.valor}`}><button className="buttonSearch" type="submit" value="Submit"><i class="fa-solid fa-magnifying-glass"></i></button></Link>
+                </div>
             </form>
         )
     }

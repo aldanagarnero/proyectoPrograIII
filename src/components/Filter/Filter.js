@@ -1,27 +1,32 @@
 import React, {Component} from 'react';
+import './Filter.css'
+import { Link } from "react-router-dom";
 
 class Filter extends Component{
     constructor(props){
-        super(props); //se usa el super para usar las props si es que son necesarias
+        super(props);
         this.state = {
-            filterText: ''
+            filterText: '',
+            movies: []
         }
     }
+
     handleSubmit(event) {
         event.preventDefault();
-      }
+    }
+
     handleChange(event) {
-        this.setState({filterText: event.target.value}, () => this.props.filtering(this.state.filterText));
+        this.setState({filterText: event.target.value})
     }
 
     render(){
         return(
-            <section className='filtrado'>
-                <form onSubmit={(event)=>this.handleSubmit(event)}>
-                    <input type='text' placeholder='Filtrar' onChange={(event)=>this.handleChange(event)} value={this.state.filterText} />
-                    <button type="submit" value="Submit">Filtrar</button>
+                <form className="form" onSubmit={(event)=>this.handleSubmit(event)}>
+                    <div className="search">
+                        <input className="input" type='text' placeholder='Filtrar' onChange={(event)=>this.handleChange(event)} value={this.state.filterText}/>
+                        <button className="buttonSearch" type="submit" value="Submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
                 </form>
-            </section>
         );
     };
 }

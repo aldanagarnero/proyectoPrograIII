@@ -76,8 +76,8 @@ class CardMovies extends Component {
                 </Link>
 
             <div>
-                <button onClick={() => this.functionShowInfo()} type='button'> {this.state.showInfo}</button>
-                <a className='button' onClick={()=> this.functionFavs(this.props.movieData.id)} type='button'> <i className={this.state.clase}/></a>
+                <button className='buttonInfo' onClick={() => this.functionShowInfo()} type='button'> {this.state.showInfo}</button>
+                <a className='buttonFav' onClick={()=> this.functionFavs(this.props.movieData.id)} type='button'> <i className={this.state.clase}/></a>
                 {this.state.showInfo === 'Mostrar más' ?  false : <p>{this.props.movieData.overview}</p>}
             </div>
             </section>

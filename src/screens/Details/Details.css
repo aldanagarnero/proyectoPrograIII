@@ -2,19 +2,24 @@
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
+    justify-content: center;
 }
 
 .contenedorimagendetails{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     background-color:rgba(16, 15, 15, 0.491);
     margin: 35px 0px 0px 70px;
-    width: 440px;
-    height: 587px;
+    width: 340px;
+    height: 487px;
 }
 
 .imagendetails{
-    height: 490px;
-    width: 340px;
-    margin: 30px 0px -30px 43px;
+    height: 390px;
+    width: 240px;
 }
 
 .titulodetails{
@@ -22,34 +27,51 @@
     flex-wrap: nowrap;
     flex-direction: row;
     font-size: 30px;
-    padding: 10px;
+    padding: 17px;
     background-color:rgba(16, 15, 15, 0.491);
-    text-align: center;
     justify-content: center;
     color: white;
-    margin: 20px;
+    margin: 35px 30px 5px 30px;
 }
 
-.button{
-    border-radius: 25px;
+.buttonFav{
+    padding-left: 10px;
     color: white;
-    padding: 5px;
-    margin: 40px 0px 10px 120px;
+    cursor: pointer;
 }
 
+.enFav{
+    color: red;
+}
+
+.buttonFav :hover{
+    color: #583577;
+}
+
+.contenedorFav{
+    margin-top: 30px;
+    margin-left: 25px;
+}
 .infoDetail{
-    padding-left: 3vw;
+    padding-left: 50px;
     color: white;
-    width: 45vw;
-    margin-top: 15px;
+    width: 550px;
+    margin-top: 20px;
 }
 
 .listaDetail{
     list-style-type: none;
     padding-left: 0px;
-    margin-bottom: 4vh;
+    margin-bottom: 4px;
 }
 
 .datos{
     color: white;
+}
+
+.sinopsis{
+    margin-bottom: 0px;
+    text-align: justify;
+    font-size: 16px;
+    color: #9e80b8;
 }

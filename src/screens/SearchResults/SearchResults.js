@@ -22,7 +22,7 @@ class SearchResults extends Component {
     render() {
         return (
             <main>
-                <h1 className='titulos'>Resultados para {this.props.match.params.query} </h1>
+                <h1 className='titulos'>Resultados para {this.props.match.params.query}</h1>
                 <div className='seccion'>
                     {this.state.movies.length > 0 ? 
                         this.state.movies.map((movies) =>

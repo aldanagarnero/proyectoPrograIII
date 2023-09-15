@@ -21,22 +21,7 @@
     margin-top: 20px;
 }
 
-.tituloViewAll{
-    margin: 45px 830px 10px 10px;
+.titulos{
+    margin: 45px 0px 10px 10px;
     color: white;
-    display: inline-block;
 }
-
-.buttonMore{
-    background-color:#583577;
-    width: 140px;
-    height: 35px;
-    padding: 8px;
-    border-radius: 15px;
-    color: white;
-    font-size: 13px;
-    border: 1.5px solid #E0E1E4;
-    cursor: pointer;
-    align-items: end;
-}
-

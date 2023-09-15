@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Home.css';
 import CardMovies from '../../components/CardMovies/CardMovies';
 import { Link } from 'react-router-dom';
+import SearchBar from '../../components/SearchBar/SearchBar';
 
 class Home extends Component {
     constructor() {
@@ -33,15 +34,17 @@ class Home extends Component {
     render() {
         return (
             <main>
+                {/* BUSCADOR */}
+                <SearchBar />
                 <section>
-                    <Link to={'/popular'}><h1 className='titulos'>Peliculas populares</h1></Link>
+                    <Link to={'/popular'}><h1 className='tituloPop'>Peliculas populares</h1></Link>
                     <div className="seccion_pop">
                         {this.state.popular.slice(0, 5).map((movie) =>
                             <CardMovies movieData={movie} />
                         )}
                     </div>
                     
-                    <Link to={'/upcoming'}><h1 className='titulos'>Peliculas próximas</h1></Link>
+                    <Link to={'/upcoming'}><h1 className='tituloUp'>Peliculas próximas</h1></Link>
                     <div className="seccion_up">
                         {this.state.upcoming.slice(0, 5).map((movie) =>
                             <CardMovies movieData={movie} />

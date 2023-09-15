@@ -68,22 +68,22 @@ class MovieDetails extends Component {
                 (<section>
                     <h2 className='titulodetails'>{this.state.movies.title}</h2>
                     <section className='contenedordetail'>            
-                        <div>
-                        <a className='button' onClick={()=> this.functionFavs(this.props.movieData.id)} type='button'><i className={this.state.clase}/></a>
-                        </div>
-
                         <div className='contenedorimagendetails'>
                             <img className='imagendetails' src={`https://image.tmdb.org/t/p/w300/${this.state.movies.poster_path}`} alt={this.state.movies.title}/>
                         </div>
 
                         <div className="infoDetail">
                             <ul className="listaDetail">
-                                <li className='datos'><p>Calificación: {this.state.movies.vote_average}</p></li>
                                 <li className='datos'><p>Fecha de estreno: {this.state.movies.release_date}</p></li>
                                 <li className='datos'><p>Duración: {this.state.movies.vote_average}</p></li>
-                                <li className='datos'><p>Sinopsis: {this.state.movies.overview}</p></li>
+                                <li className='datos'><p>Calificación: {this.state.movies.vote_average}</p></li>
                                 <li className='datos'><p>Genero: {this.state.movies.genres.map((genre) => `${genre.name} | `)}</p></li> 
+                                <li className='sinopsis'><p>Sinopsis: {this.state.movies.overview}</p></li>
                             </ul>
+                        </div>
+
+                        <div className='contenedorFav'>
+                            <a className='buttonFav' onClick={()=> this.functionFavs(this.props.match.params.id)} type='button'><i className={this.state.clase}/></a>
                         </div>
                     </section>
                 </section>)

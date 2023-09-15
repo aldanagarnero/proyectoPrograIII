@@ -7,6 +7,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    margin-top: 20px;
 }
 
 .seccion_up{
@@ -21,7 +22,12 @@
     margin-top: 20px;
 }
 
-.titulos{
-    margin: 45px 0px 10px 10px;
+.tituloPop{
+    margin: 18px 0px 10px 10px;
+    color: white;
+}
+
+.tituloUp{
+    margin: 60px 0px 10px 10px;
     color: white;
 }

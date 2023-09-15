@@ -1,0 +1,9 @@
+.texto{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    color: #9e80b8;
+    font-size: 80px;
+    margin: 209px;
+}

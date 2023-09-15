@@ -1,14 +1,14 @@
 import React from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
-import SearchBar from '../SearchBar/SearchBar';
+
 
 function Navbar() {
     return (
         <header>
             {/* LOGO */}
             <div>
-                <Link to='/'><img className="logo" src="./img/nuevologo.png" alt="Logo Albas" /></Link>
+                <Link to='/'><img className="logo" src="./img/logo.png" alt="Logo Albas" /></Link>
             </div>
 
             {/* BARRA DE NAVEGACIÓN */}
@@ -23,10 +23,7 @@ function Navbar() {
                 </nav>
             </div>
 
-            {/* BUSCADOR */}
-            <div className='search'>
-                <SearchBar />
-            </div>
+            
         </header>
     )
 }

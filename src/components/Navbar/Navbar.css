@@ -10,18 +10,21 @@ header{
  }
 
  .logo{
-    width: 160px; 
-    height: 120px; 
-    align-self:left;
-    align-items: center;
+    width: 155px; 
+    height: 155px; 
+    align-self :left;
+    
+    margin-left: 10px;
 }
 
 .contenedorItems{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+   
     font-size: 20px;
     padding: 0%;
+    margin-right: 465px;
 }
 
 .item{
