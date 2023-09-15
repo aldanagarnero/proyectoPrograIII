@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './ViewAll.css';
 import CardMovies from '../../components/CardMovies/CardMovies';
+import Filter from '../../components/Filter/Filter';
 
 class ViewAllPopular extends Component {
     constructor(props) {
@@ -18,12 +19,18 @@ class ViewAllPopular extends Component {
             ))
             .catch((error) => console.log(error));
     }
-
+    movieFilter(m){
+        let filtered = this.state.popular.filter((movie)=>movie.title.includes(m))
+        this.setState({
+            popular: filtered
+        })
+    }
     render() {
         return (
             <main>
                 <section>
                     <h1 className='titulos'>Todas las películas populares</h1>
+                    <Filter filtering={(m)=> this.movieFilter(m)}/>
                     <div className="seccion_pop">
                         {this.state.popular.length > 0 ? 
                             this.state.popular.map((movie) =>  
