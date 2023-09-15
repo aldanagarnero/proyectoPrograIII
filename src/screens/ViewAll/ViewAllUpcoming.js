@@ -3,6 +3,7 @@ import './ViewAll.css';
 import CardMovies from '../../components/CardMovies/CardMovies';
 import Filter from '../../components/Filter/Filter';
 
+
 class ViewAllUpcoming extends Component {
     constructor(props) {
         super(props)
@@ -21,8 +22,10 @@ class ViewAllUpcoming extends Component {
             .catch((error) => console.log(error));
     }
 
-    movieFilter(text){
-        let filtered = this.state.upcoming.filter((movie) => movie.title.includes(text))
+    movieFilter = (text) => {
+        let filtered = this.state.upcoming.filter((movie) =>
+        movie.title.toUpperCase().includes(text.toUpperCase()))
+
         this.setState({
             upcoming: filtered
         })
@@ -40,18 +43,18 @@ class ViewAllUpcoming extends Component {
     }    
 
     render() {
-        console.log(this.state)
         return (
             <main>
-                <section className='body_home'>
+                <section>
                     <Filter filtering={(text)=> this.movieFilter(text)}/>
                     <h1 className='tituloViewAll'>Todas las películas próximas</h1>
                     <button onClick={() => this.showMore()} className="buttonMore"><strong>Ver más películas</strong></button>
                     <div className="seccion_up">
-                        {this.state.upcoming.length === 0 ? (<img src='/img/gif-carga.gif' alt="Cargando..." />) : (
-                            this.state.upcoming.map(function (movie) {
-                                return <CardMovies movieData={movie} />
-                            }))}
+                        {this.state.upcoming.length > 0 ? 
+                            this.state.upcoming.map((movie) =>  
+                               <CardMovies movieData={movie} />)
+                            : (<img src='/img/gif-carga.gif' alt="Cargando..." />) 
+                        }
                     </div>
                 </section>
             </main>

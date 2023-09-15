@@ -88,7 +88,7 @@ class MovieDetails extends Component {
                     </section>
                 </section>)
                 
-                : (<img src='/img/gif-carga.gif' alt="Cargando..." />)
+                : (<img src='/img/gif-carga.gif' alt="Cargando..." />) 
                 }
             </main>
             </React.Fragment>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './SearchResults.css';
 import CardMovies from "../../components/CardMovies/CardMovies";
 
+
 class SearchResults extends Component {
     constructor() {
         super()

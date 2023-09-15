@@ -39,18 +39,21 @@ class Home extends Component {
                 <section>
                     <Link to={'/popular'}><h1 className='tituloPop'>Peliculas populares</h1></Link>
                     <div className="seccion_pop">
-                        {this.state.popular.slice(0, 5).map((movie) =>
-                            <CardMovies movieData={movie} />
-                        )}
+                        {this.state.popular.length > 0 ? 
+                            this.state.popular.slice(0, 5).map((movie) =>  
+                               <CardMovies movieData={movie} />)
+                            : (<img src='/img/gif-carga.gif' alt="Cargando..." />) 
+                        }
                     </div>
                     
                     <Link to={'/upcoming'}><h1 className='tituloUp'>Peliculas próximas</h1></Link>
                     <div className="seccion_up">
-                        {this.state.upcoming.slice(0, 5).map((movie) =>
-                            <CardMovies movieData={movie} />
-                        )}
+                        {this.state.upcoming.length > 0 ? 
+                            this.state.upcoming.slice(0, 5).map((movie) =>  
+                               <CardMovies movieData={movie} />)
+                            : (<img src='/img/gif-carga.gif' alt="Cargando..." />) 
+                        }
                     </div>
-                    
                 </section>
             </main>
         )

@@ -1,18 +1,18 @@
 import React, {Component} from 'react';
-import './Filter.css'
-import { Link } from "react-router-dom";
+import './Filter.css';
 
 class Filter extends Component{
     constructor(props){
         super(props);
         this.state = {
             filterText: '',
-            movies: []
         }
     }
 
     handleSubmit(event) {
         event.preventDefault();
+        console.log(this.state.filterText);
+        this.props.filtering(this.state.filterText);
     }
 
     handleChange(event) {

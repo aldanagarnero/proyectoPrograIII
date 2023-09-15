@@ -3,6 +3,7 @@ import './ViewAll.css';
 import CardMovies from '../../components/CardMovies/CardMovies';
 import Filter from '../../components/Filter/Filter';
 
+
 class ViewAllPopular extends Component {
     constructor(props) {
         super(props)
@@ -21,10 +22,12 @@ class ViewAllPopular extends Component {
             .catch((error) => console.log(error));
     }
 
-    movieFilter(text){
-        let filtered = this.state.popular.filter((movie)=>movie.title.includes(text))
+    movieFilter = (text) => {
+        let filtered = this.state.popular.filter((movie) =>
+        movie.title.toUpperCase().includes(text.toUpperCase()))
+
         this.setState({
-            popular: filtered
+            popular: filtered,
         })
     }
 
@@ -50,7 +53,7 @@ class ViewAllPopular extends Component {
                         {this.state.popular.length > 0 ? 
                             this.state.popular.map((movie) =>  
                                <CardMovies movieData={movie} />)
-                            : (<img src='/img/gif-carga.gif' alt="Cargando..." />)
+                            : (<img src='/img/gif-carga.gif' alt="Cargando..." />) 
                         }
                     </div>
                 </section>
