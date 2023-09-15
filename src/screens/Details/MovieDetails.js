@@ -62,32 +62,36 @@ class MovieDetails extends Component {
 
     render() {
         return (
+            <React.Fragment>
             <main>
                 {this.state.movies.length !== 0 ?
                 (<section>
                     <h2 className='titulodetails'>{this.state.movies.title}</h2>
-
-                    <div>
+                    <section className='contenedordetail'>            
+                        <div>
                         <a className='button' onClick={()=> this.functionFavs(this.props.movieData.id)} type='button'><i className={this.state.clase}/></a>
-                    </div>
+                        </div>
 
-                    <div>
-                        <img src={`https://image.tmdb.org/t/p/w300/${this.state.movies.poster_path}`} alt={this.state.movies.title}/>
-                    </div>
+                        <div className='contenedorimagendetails'>
+                            <img className='imagendetails' src={`https://image.tmdb.org/t/p/w300/${this.state.movies.poster_path}`} alt={this.state.movies.title}/>
+                        </div>
 
-                    <div>
-                        <ul>
-                            <li><p>Calificación: {this.state.movies.vote_average}</p></li>
-                            <li><p>Fecha de estreno: {this.state.movies.release_date}</p></li>
-                            <li><p>Duración: {this.state.movies.vote_average}</p></li>
-                            <li><p>Sinopsis: {this.state.movies.overview}</p></li>
-                            <li><p>Genero: {this.state.movies.genres.map((genre) => `${genre.name} | `)}</p></li> 
-                        </ul>
-                    </div>
+                        <div className="infoDetail">
+                            <ul className="listaDetail">
+                                <li className='datos'><p>Calificación: {this.state.movies.vote_average}</p></li>
+                                <li className='datos'><p>Fecha de estreno: {this.state.movies.release_date}</p></li>
+                                <li className='datos'><p>Duración: {this.state.movies.vote_average}</p></li>
+                                <li className='datos'><p>Sinopsis: {this.state.movies.overview}</p></li>
+                                <li className='datos'><p>Genero: {this.state.movies.genres.map((genre) => `${genre.name} | `)}</p></li> 
+                            </ul>
+                        </div>
+                    </section>
                 </section>)
+                
                 : (<img src='/img/gif-carga.gif' alt="Cargando..." />)
                 }
             </main>
+            </React.Fragment>
         )
     }
 }
